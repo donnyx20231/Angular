@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/Boostrap-css/bootstrap.min.css">
+    <link rel="stylesheet" href="Css/Main-Css.css">
+    <script src="Js/angular.min.js"></script>
+    <script src="Js/angular-route.js"></script>
+    <title>FootLey Kicks</title>
+    <style>
+        ul a{
+            text-decoration: none;
+        }
+        ul{
+            padding: 10px 10px 10px 10px;
+            background: #000;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+<ul>
+    <a href="#/!">Main</a>
+    <a href="#!red">Red</a>
+    <a href="#!green">Green</a>
+    <a href="#!blue">Blue</a>
+</ul>
+<p>Click on the links to navigate to "red.htm", "green.htm", "blue.htm", or back to "main.htm"</p>
+<div ng-view></div>
+
+    
+    <script>
+    var app = angular.module("myApp", ["ngRoute"]);
+    app.config(function($routeProvider) {
+        $routeProvider
+        .when("/!", {
+            templateUrl : "Main.html"
+        })
+        .when("/red", {
+            templateUrl : "red.html"
+        })
+        .when("/green", {
+            templateUrl : "green.html"
+        })
+        .when("/blue", {
+            templateUrl : "blue.html"
+        }) 
+   
+    });
+    </script>
+    
+</body>
+</html>
